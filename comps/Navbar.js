@@ -47,13 +47,15 @@ function Navbar() {
 
     getUser();
 
+    function getUser() {
+      return Auth.currentAuthenticatedUser()
+        .then(() => dispatch(signedIn()))
+        .catch(() => dispatch(signedOut()));
+    }
+
   }, []);
 
-  function getUser() {
-    return Auth.currentAuthenticatedUser()
-      .then(() => dispatch(signedIn()))
-      .catch(() => dispatch(signedOut()));
-  }
+ 
 
   return (
     <div>

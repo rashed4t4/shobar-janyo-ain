@@ -6,7 +6,7 @@ import {Amplify} from "aws-amplify"
 import awsconfig from "../src/aws-exports"
 import '@aws-amplify/ui-react/styles.css'
 
-Amplify.configure({...awsconfig,ssr:true})
+Amplify.configure({...awsconfig,ssr:false})
 
 import { store } from '../store'
 import { Provider } from 'react-redux'
